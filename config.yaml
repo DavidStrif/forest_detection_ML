@@ -1,0 +1,27 @@
+# Dateipfade (relativ zum Hauptverzeichnis)
+paths:
+  raw_satellite_dir: "data/raw/"                      # Ordner mit den Sentinel-2 .jp2/.tif Dateien
+  training_polygons: "data/interim/trainingsdata.gpkg"       # Geopackage
+  model_output: "data/processed/rf_forest_model.pkl"  # Hier wird das trainierte Modell gespeichert
+  prediction_output: "data/processed/forest_mask.tif" # Das finale Ausgabe-Bild
+
+# Sentinel-2 Einstellungen
+satellite:
+  bands:
+    - "B02"  # Blau
+    - "B03"  # Grün
+    - "B04"  # Rot
+    - "B08"  # Nahes Infrarot (NIR)
+  calculate_ndvi: true
+
+# Einstellungen für die Ground-Truth Daten
+geo:
+  gpkg_layer: "trainigsdata"  # Layername
+  label_column: "class_id"     # Spalte Wald/nicht Wald 1/0
+
+# Machine Learning Hyperparameter (Random Forest)
+model:
+  n_estimators: 100            # Anzahl der Entscheidungsbäume
+  max_depth: 15                # Maximale Tiefe
+  random_state: 42             # Sorgt dafür, dass bei jedem Run dasselbe Ergebnis herauskommt
+  test_size: 0.2               # 20% der Pixel werden zum Testen der Modell-Genauigkeit genutzt
