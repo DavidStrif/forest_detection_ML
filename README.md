@@ -11,7 +11,7 @@ This repository contains a machine learning pipeline (Random Forest) for the aut
 </p>
 *Left: Raw Satellite RGB image | Right: Predicted Forest Mask (Green)*
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ├── config.yaml          # Central configuration file (paths, hyperparameters)
@@ -27,13 +27,13 @@ This repository contains a machine learning pipeline (Random Forest) for the aut
     ├── train.py         # Trains the Random Forest model (train/test split)
     └── predict.py       # Applies the model to the entire satellite image
 
-## 🚀 Installation
+## Installation
 
 1. Clone this repository.
 2. Create a virtual environment (e.g., using Conda or venv) and activate it.
 3. Install the required dependencies:
 
-## 🛠️ Workflow & Execution
+## Workflow & Execution
 
 ### Step 1: Data Preparation
 1. Download a Sentinel-2 L2A scene.
